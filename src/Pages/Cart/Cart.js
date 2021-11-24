@@ -12,8 +12,16 @@ import { successNotify } from '../../utils/toastify';
 import { getOldCart } from '../../utils/cartHandler';
 import CheckoutForm from '../../Components/CheckoutForm/CheckoutForm';
 import CartOverview from '../../Components/CartOverview/CartOverview';
+import calculateCartAmount from '../../utils/cartCalculation';
 
 const Cart = () => {
+
+    const { cart, setCart } = useContext(CartContext);
+    const { cartFoods } = useCartFoods();
+
+    const { totalPrice } = calculateCartAmount(cartFoods);
+
+    const [total, setTotal] = useState(totalPrice);
 
     const [formData, setFormData] = useState({
         name: '',
@@ -23,8 +31,7 @@ const Cart = () => {
         deliveryNote: ''
     });
 
-    const { cart, setCart } = useContext(CartContext);
-    const { cartFoods } = useCartFoods();
+
     const cartItems = cartFoods.reduce((p, c) => p + c.quantity, 0);
 
     const navigate = useNavigate();
@@ -80,12 +87,23 @@ const Cart = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (formData.name && formData.address && formData.city) {
-            navigate('/');
-
+            const orderData = {
+                orderBy: formData.name,
+                address: {
+                    city: formData.city,
+                    address: formData.address,
+                    flat: formData.flat
+                },
+                orderNote: formData.deliveryNote,
+                orderAmount: total
+            }
             localStorage.removeItem('bakery-cart');
             const newCarts = getOldCart();
             setCart(newCarts);
-            successNotify('Order received successfully')
+            successNotify('Order received successfully');
+
+            navigate('/order-success');
+            console.log(orderData);
         }
     }
 
@@ -97,7 +115,7 @@ const Cart = () => {
             }}>
                 <Container fixed>
                     {cartItems > 0 ? (
-                        <form action="">
+                        <form action="" onSubmit={handleSubmit}>
                             <Grid container spacing={4}>
                                 <Grid item md={6} xs={12}>
 
@@ -106,12 +124,17 @@ const Cart = () => {
                                         handleQtyIncrement={handleQtyIncrement}
                                         handleQtyDecrement={handleQtyDecrement}
                                         qtyChangeHandler={qtyChangeHandler}
+                                        total={total}
+                                        setTotal={setTotal}
                                     />
 
                                 </Grid>
                                 <Grid item md={6} xs={12} sx={{ paddingRight: { lg: '100px', md: '50px' } }}>
 
-                                    <CheckoutForm formData={formData} handleChange={handleChange} />
+                                    <CheckoutForm
+                                        formData={formData}
+                                        handleChange={handleChange}
+                                    />
 
                                 </Grid>
                             </Grid>

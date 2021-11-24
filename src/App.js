@@ -7,6 +7,7 @@ import AllFoods from './Pages/AllFoods/AllFoods';
 import Home from './Pages/Home/Home';
 import SingleFood from './Pages/SingleFood/SingleFood';
 import Cart from './Pages/Cart/Cart';
+import OrderSuccess from './Pages/OrderSuccess/OrderSuccess';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/foods" element={<AllFoods />} />
         <Route path="/foods/:id" element={<SingleFood />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/order-success" element={<OrderSuccess />} />
       </Routes>
     </BrowserRouter>
   );

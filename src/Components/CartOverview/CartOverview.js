@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import useCartFoods from '../../hooks/useCartFoods';
 import { successNotify } from '../../utils/toastify';
+import calculateCartAmount from '../../utils/cartCalculation';
 
 const CartOverview = (props) => {
 
@@ -11,18 +12,23 @@ const CartOverview = (props) => {
         handleRemoveCart,
         handleQtyIncrement,
         handleQtyDecrement,
-        qtyChangeHandler
+        qtyChangeHandler,
+        total,
+        setTotal
     } = props;
 
     const { cartFoods } = useCartFoods();
 
     const cartItems = cartFoods.reduce((p, c) => p + c.quantity, 0);
-    const subtotal = cartFoods.reduce((p, c) => p + c.price * c.quantity, 0);
-    const shipping = 10;
-    const tax = (subtotal + shipping) * 10 / 100;
-    const totalPrice = subtotal + shipping + tax;
 
-    const [total, setTotal] = useState(totalPrice);
+    const {
+        subtotal,
+        shipping,
+        tax,
+        totalPrice
+    } = calculateCartAmount(cartFoods);
+
+
     const [coupon, setCoupon] = useState('');
     const [couponApplied, setCouponApplied] = useState(false);
 
@@ -265,8 +271,8 @@ const CartOverview = (props) => {
                             padding: '0 15px',
                             "&:disabled": {
                                 opacity: '0.6',
-                                cursor:'not-allowed'
-                              }
+                                cursor: 'not-allowed'
+                            }
                         }}
                     >{couponApplied ? 'Applied' : 'Apply'}</Box>
                 </Box>

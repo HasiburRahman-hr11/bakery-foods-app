@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 
-const CheckoutForm = ({ formData, handleChange }) => {
+const CheckoutForm = ({ formData, handleChange  }) => {
     return (
         <>
             <Box component="h2" sx={{
