@@ -1,0 +1,9 @@
+.main-menu li a {
+    color: #fff;
+}
+
+header .logo {
+    color: var(--primary-color);
+    font-size: 27px;
+    font-weight: bold;
+}
