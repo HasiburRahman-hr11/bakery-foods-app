@@ -11,32 +11,41 @@ const Food = ({ food }) => {
             boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px',
             borderRadius: '5px'
         }}>
-            <img src={food.thumbnail} alt={food.title} style={{
-                borderRadius: '5px'
-            }} />
-            <Typography variant="h2" component="h2" sx={{
-                fontSize: '22px',
-                textAlign: 'center',
-                marginTop: '10px',
-                fontWeight: '600'
+            <Box component="div" sx={{
+                position: 'relative'
             }}>
-                <Link to={`/foods/${food._id}`} style={{
-                    color: 'var(--primary-color)'
-                }}>
-                    {food.title}
-                </Link>
-            </Typography>
+                <img src={food.thumbnail} alt={food.title} style={{
+                    borderRadius: '5px'
+                }} />
+                <span className="food-price">
+                    <strong>${food.price}</strong> Only
+                </span>
+            </Box>
+
 
             <Box component="div" sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
+                textAlign: 'center',
                 marginTop: '10px'
             }}>
-                <span className="food-price">
-                    Price: <strong>${food.price}</strong>
-                </span>
-                <Link to={`/foods/${food._id}`} className="btn btn-primary">Order Now</Link>
+                <Typography variant="h2" component="h2" sx={{
+                    fontSize: '20px',
+                    textAlign: 'center',
+                    fontWeight: '600'
+                }}>
+                    <Link to={`/foods/${food._id}`} style={{
+                        color: 'var(--primary-color)'
+                    }}>
+                        {food.title}
+                    </Link>
+                </Typography>
+
+                <Typography variant="p" component="p" sx={{
+                    marginBottom:'20px'
+                }}>
+                    {food.description.substr(0 , 30)}...
+                </Typography>
+
+                <Link to={`/foods/${food._id}`} className="btn btn-primary btn-rounded">Order Now</Link>
             </Box>
         </Box>
     );

@@ -59,9 +59,11 @@ button {
 .btn {
   padding: 13px 20px;
   border-radius: 5px;
-  text-align: center;
   cursor: pointer;
   font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-primary {
@@ -74,9 +76,14 @@ button {
 }
 
 .food-price{
-  padding: 13px 20px;
-  background-color: #F1F1F1;
-  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: rgba(228, 227, 227, 0.8);
+  border-radius: 30px;
+  color: var(--primary-color);
   text-align: center;
-  color: #666;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 14px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }

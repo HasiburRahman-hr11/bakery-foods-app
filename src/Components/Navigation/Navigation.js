@@ -16,11 +16,7 @@ const Navigation = () => {
                 height: '80px',
                 display: 'flex',
                 alignItems: 'center',
-                backgroundColor: 'rgba(0, 0, 0, 0.60)',
-                position:'fixed',
-                width:'100%',
-                left:'0',
-                top:'0',
+                backgroundColor: '#fff'
             }}
         >
             <Container fixed>
@@ -68,9 +64,7 @@ const Navigation = () => {
                             </Box>
                             <Box component="li" sx={{ marginLeft: '20px', position: 'relative', paddingTop: '5px' }}>
                                 <Link to="/checkout">
-                                    <AddShoppingCartIcon sx={{
-                                        color: '#fff'
-                                    }} />
+                                    <AddShoppingCartIcon/>
                                 </Link>
                                 <Box component="span" sx={{
                                     position: 'absolute',
