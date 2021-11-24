@@ -1,0 +1,11 @@
+
+
+@media only screen and (max-width:350px){
+    .cart-item{
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+    .cart-item-thumbnail{
+        display: none;
+    }
+}

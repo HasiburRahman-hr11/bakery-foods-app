@@ -32,13 +32,32 @@ ul {
 
 img,
 input,
+textarea,
 form {
   width: 100%;
 }
 
 input,
-button {
+button,
+textarea {
   outline: 0;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+
 }
 
 /* Commonly used class */
@@ -93,3 +112,26 @@ button {
 }
 
 
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group input,
+.input-group textarea {
+  background-color: #F5F5F5;
+  padding-left: 10px;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.input-group textarea {
+  min-height: 100px;
+  padding-top: 10px;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: #7E7E7E;
+  font-size: 14px;
+}

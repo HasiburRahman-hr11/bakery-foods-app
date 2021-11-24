@@ -108,9 +108,7 @@ const SingleFood = () => {
                                             height: '40px',
                                             backgroundColor: '#fff',
                                             borderRadius: '30px',
-                                            border: '0',
                                             fontSize: '18px',
-                                            cursor: 'pointer',
                                             '&:hover': {
                                                 color: "var(--primary-color)",
                                             }
@@ -135,9 +133,7 @@ const SingleFood = () => {
                                             height: '40px',
                                             backgroundColor: '#fff',
                                             borderRadius: '30px',
-                                            border: '0',
                                             fontSize: '18px',
-                                            cursor: 'pointer',
                                             '&:hover': {
                                                 color: "var(--primary-color)",
                                             }
