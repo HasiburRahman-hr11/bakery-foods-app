@@ -6,13 +6,12 @@ import Navigation from '../../Components/Navigation/Navigation';
 
 import { foods } from '../../fakeData';
 import Food from '../../Components/Food/Food';
-import { Link } from 'react-router-dom';
 
 const AllFoods = () => {
     return (
         <>
             <Navigation />
-            <Box component="section" className="page foods-page" sx={{
+            <Box component="div" className="page foods-page" sx={{
                 padding: '50px 0'
             }}>
                 <Container fixed>
