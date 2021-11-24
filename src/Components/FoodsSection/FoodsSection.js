@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
-// Foods Data
 import { foods } from '../../fakeData';
 import Food from '../Food/Food';
 import { Link } from 'react-router-dom';
@@ -15,7 +14,7 @@ const FoodsSection = () => {
         }}>
             <Container fixed>
                 <h2 className="section-title">Our Foods</h2>
-                <p className="section-subtitle">Lorem, ipsum dolor</p>
+                <p className="section-subtitle">Eat away at hunger</p>
 
 
                 <Box component="div" sx={{

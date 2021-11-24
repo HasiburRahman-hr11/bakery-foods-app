@@ -56,7 +56,7 @@ const HeroBanner = () => {
                             marginBottom:'30px'
                         }}
                         >
-                            The food you desire
+                            It's time for hunger to can it!
                             </Typography>
                         <Link to="/foods" className="btn btn-primary btn-rounded">Taste Now</Link>
                     </div>

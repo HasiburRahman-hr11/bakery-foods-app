@@ -48,10 +48,12 @@ button {
   font-size: 30px;
   color: var(--primary-color);
   text-align: center;
-  margin-bottom: 5px;
 }
 .section-subtitle{
   text-align: center;
+  font-family: 'Playball', cursive;
+  font-size: 20px;
+  color: #333;
 }
 
 
