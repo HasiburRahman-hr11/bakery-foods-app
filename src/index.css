@@ -43,8 +43,15 @@ button {
 
 /* Commonly used class */
 
-.title {
+.section-title {
   font-family: 'Playball', cursive;
+  font-size: 30px;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 5px;
+}
+.section-subtitle{
+  text-align: center;
 }
 
 
