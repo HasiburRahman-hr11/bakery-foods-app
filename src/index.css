@@ -72,3 +72,11 @@ button {
 .btn-rounded {
   border-radius: 30px;
 }
+
+.food-price{
+  padding: 13px 20px;
+  background-color: #F1F1F1;
+  border-radius: 5px;
+  text-align: center;
+  color: #666;
+}
