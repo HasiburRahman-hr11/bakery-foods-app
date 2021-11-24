@@ -4,11 +4,14 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
 
 
 const Navigation = () => {
-
+    const {cart} = useContext(CartContext);
+    const cartItems = cart?.reduce((p, c) => p + c.quantity, 0);
     return (
         <Box
             component="header"
@@ -63,7 +66,7 @@ const Navigation = () => {
                                 </Link>
                             </Box>
                             <Box component="li" sx={{ marginLeft: '20px', position: 'relative', paddingTop: '5px' }}>
-                                <Link to="/checkout">
+                                <Link to="/cart">
                                     <AddShoppingCartIcon/>
                                 </Link>
                                 <Box component="span" sx={{
@@ -79,7 +82,7 @@ const Navigation = () => {
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     fontSize: '12px'
-                                }}>5</Box>
+                                }}>{cartItems}</Box>
                             </Box>
 
                         </Box>

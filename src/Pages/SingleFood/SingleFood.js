@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -9,8 +9,12 @@ import Navigation from '../../Components/Navigation/Navigation';
 import { useParams } from 'react-router-dom';
 import { foods } from '../../fakeData';
 import Loading from '../../Components/Loading/Loading';
+import { CartContext } from '../../context/CartContext';
+import { getOldCart, setNewCartToLs } from '../../utils/cartHandler';
+import { successNotify } from '../../utils/toastify';
 
 const SingleFood = () => {
+    const { setCart } = useContext(CartContext);
     const [food, setFood] = useState({});
     const [loading, setLoading] = useState(true);
     const params = useParams();
@@ -27,7 +31,11 @@ const SingleFood = () => {
     }
 
     const handleAddToCart = (food, quantity) => {
-
+        setNewCartToLs(food, quantity);
+        const newCart = getOldCart();
+        setCart(newCart);
+        setQuantity(1);
+        successNotify('Food added to cart');
     }
 
     useEffect(() => {
@@ -76,8 +84,8 @@ const SingleFood = () => {
                                 </Typography>
                                 <Typography variant="p" component="p" sx={{
                                     marginBottom: '30px',
-                                    color:'#444',
-                                    maxWidth:'400px'
+                                    color: '#444',
+                                    maxWidth: '400px'
                                 }}>
                                     {food.description}
                                 </Typography>
@@ -100,12 +108,12 @@ const SingleFood = () => {
                                             height: '40px',
                                             backgroundColor: '#fff',
                                             borderRadius: '30px',
-                                            border:'0',
-                                            fontSize:'18px',
-                                            cursor:'pointer',
+                                            border: '0',
+                                            fontSize: '18px',
+                                            cursor: 'pointer',
                                             '&:hover': {
                                                 color: "var(--primary-color)",
-                                             }
+                                            }
                                         }}>-</Box>
 
                                     <Box component="input"
@@ -117,7 +125,7 @@ const SingleFood = () => {
                                             width: '30px',
                                             height: '40px',
                                             textAlign: 'center',
-                                            border:'0'
+                                            border: '0'
                                         }} />
 
                                     <Box component="button"
@@ -127,12 +135,12 @@ const SingleFood = () => {
                                             height: '40px',
                                             backgroundColor: '#fff',
                                             borderRadius: '30px',
-                                            border:'0',
-                                            fontSize:'18px',
-                                            cursor:'pointer',
+                                            border: '0',
+                                            fontSize: '18px',
+                                            cursor: 'pointer',
                                             '&:hover': {
                                                 color: "var(--primary-color)",
-                                             }
+                                            }
                                         }}>+</Box>
                                 </Box>
 
@@ -143,8 +151,8 @@ const SingleFood = () => {
                                         sx={{
                                             display: 'flex',
                                             alignItems: 'center',
-                                            padding:'8px 20px',
-                                            marginLeft:'20px'
+                                            padding: '8px 20px',
+                                            marginLeft: '20px'
                                         }}
                                         onClick={() => handleAddToCart(food, quantity)}
                                     >
