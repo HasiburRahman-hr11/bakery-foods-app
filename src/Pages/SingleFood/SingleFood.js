@@ -13,6 +13,7 @@ import { CartContext } from '../../context/CartContext';
 import { getOldCart, setNewCartToLs } from '../../utils/cartHandler';
 import { successNotify } from '../../utils/toastify';
 import Footer from '../../Components/Footer/Footer';
+import Fade from 'react-reveal/Fade';
 
 const SingleFood = () => {
     const { setCart } = useContext(CartContext);
@@ -60,106 +61,110 @@ const SingleFood = () => {
                 <Container fixed>
                     <Grid container spacing={4} >
                         <Grid item md={6} xs={12}>
-                            <Box component="div">
-                                <img src={food.thumbnail} alt={food.title} />
-                            </Box>
+                            <Fade bottom>
+                                <Box component="div">
+                                    <img src={food.thumbnail} alt={food.title} />
+                                </Box>
+                            </Fade>
                         </Grid>
                         <Grid item md={6} xs={12}>
-                            <Box component="div">
-                                <Typography variant="h2" component="h2" sx={{
-                                    fontFamily: "'Playball', cursive",
-                                    fontSize: {
-                                        sm: '35px',
-                                        xs: '30px'
-                                    },
-                                    color: 'var(--primary-color)',
-                                    marginBottom: '10px'
-                                }}>
-                                    {food.title}
-                                </Typography>
-                                <Typography variant="h3" component="h3" sx={{
-                                    fontSize: '25px',
-                                    marginBottom: '25px'
-                                }}>
-                                    Price: ${food.price} Only
-                                </Typography>
-                                <Typography variant="p" component="p" sx={{
-                                    marginBottom: '30px',
-                                    color: '#444',
-                                    maxWidth: '400px',
-                                    fontFamily: "'Playball', cursive",
-                                    fontSize: '18px'
-                                }}>
-                                    {food.description}
-                                </Typography>
-                            </Box>
-
-                            <Box component="div" sx={{
-                                display: 'flex',
-                                alignItems: 'center'
-                            }}>
-                                <Box component="div" className="quantity-wrapper" sx={{
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    border: '1px solid #ddd',
-                                    borderRadius: '30px'
-                                }}>
-                                    <Box component="button"
-                                        onClick={handleQtyDecrement}
-                                        sx={{
-                                            width: '40px',
-                                            height: '40px',
-                                            backgroundColor: '#fff',
-                                            borderRadius: '30px',
-                                            fontSize: '18px',
-                                            '&:hover': {
-                                                color: "var(--primary-color)",
-                                            }
-                                        }}>-</Box>
-
-                                    <Box component="input"
-                                        type="number"
-                                        min="1"
-                                        value={quantity}
-                                        onChange={(e) => setQuantity(e.target.value)}
-                                        sx={{
-                                            width: '30px',
-                                            height: '40px',
-                                            textAlign: 'center',
-                                            border: '0'
-                                        }} />
-
-                                    <Box component="button"
-                                        onClick={handleQtyIncrement}
-                                        sx={{
-                                            width: '40px',
-                                            height: '40px',
-                                            backgroundColor: '#fff',
-                                            borderRadius: '30px',
-                                            fontSize: '18px',
-                                            '&:hover': {
-                                                color: "var(--primary-color)",
-                                            }
-                                        }}>+</Box>
+                            <Fade bottom>
+                                <Box component="div">
+                                    <Typography variant="h2" component="h2" sx={{
+                                        fontFamily: "'Playball', cursive",
+                                        fontSize: {
+                                            sm: '35px',
+                                            xs: '30px'
+                                        },
+                                        color: 'var(--primary-color)',
+                                        marginBottom: '10px'
+                                    }}>
+                                        {food.title}
+                                    </Typography>
+                                    <Typography variant="h3" component="h3" sx={{
+                                        fontSize: '25px',
+                                        marginBottom: '25px'
+                                    }}>
+                                        Price: ${food.price} Only
+                                    </Typography>
+                                    <Typography variant="p" component="p" sx={{
+                                        marginBottom: '30px',
+                                        color: '#444',
+                                        maxWidth: '400px',
+                                        fontFamily: "'Playball', cursive",
+                                        fontSize: '18px'
+                                    }}>
+                                        {food.description}
+                                    </Typography>
                                 </Box>
 
-                                <Box component="div" className="add_to_cart">
-                                    <Box
-                                        component="button"
-                                        className="btn btn-primary btn-rounded"
-                                        sx={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            padding: '8px 20px',
-                                            marginLeft: '20px'
-                                        }}
-                                        onClick={() => handleAddToCart(food, quantity)}
-                                    >
-                                        <AddShoppingCartIcon />
-                                        <Box component="span" sx={{ marginLeft: '10px' }} >Add</Box>
+                                <Box component="div" sx={{
+                                    display: 'flex',
+                                    alignItems: 'center'
+                                }}>
+                                    <Box component="div" className="quantity-wrapper" sx={{
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        border: '1px solid #ddd',
+                                        borderRadius: '30px'
+                                    }}>
+                                        <Box component="button"
+                                            onClick={handleQtyDecrement}
+                                            sx={{
+                                                width: '40px',
+                                                height: '40px',
+                                                backgroundColor: '#fff',
+                                                borderRadius: '30px',
+                                                fontSize: '18px',
+                                                '&:hover': {
+                                                    color: "var(--primary-color)",
+                                                }
+                                            }}>-</Box>
+
+                                        <Box component="input"
+                                            type="number"
+                                            min="1"
+                                            value={quantity}
+                                            onChange={(e) => setQuantity(e.target.value)}
+                                            sx={{
+                                                width: '30px',
+                                                height: '40px',
+                                                textAlign: 'center',
+                                                border: '0'
+                                            }} />
+
+                                        <Box component="button"
+                                            onClick={handleQtyIncrement}
+                                            sx={{
+                                                width: '40px',
+                                                height: '40px',
+                                                backgroundColor: '#fff',
+                                                borderRadius: '30px',
+                                                fontSize: '18px',
+                                                '&:hover': {
+                                                    color: "var(--primary-color)",
+                                                }
+                                            }}>+</Box>
+                                    </Box>
+
+                                    <Box component="div" className="add_to_cart">
+                                        <Box
+                                            component="button"
+                                            className="btn btn-primary btn-rounded"
+                                            sx={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                padding: '8px 20px',
+                                                marginLeft: '20px'
+                                            }}
+                                            onClick={() => handleAddToCart(food, quantity)}
+                                        >
+                                            <AddShoppingCartIcon />
+                                            <Box component="span" sx={{ marginLeft: '10px' }} >Add</Box>
+                                        </Box>
                                     </Box>
                                 </Box>
-                            </Box>
+                            </Fade>
 
                         </Grid>
                     </Grid>
