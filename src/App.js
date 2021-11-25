@@ -9,6 +9,7 @@ import SingleFood from './Pages/SingleFood/SingleFood';
 import Cart from './Pages/Cart/Cart';
 import OrderSuccess from './Pages/OrderSuccess/OrderSuccess';
 import PageScroll from './Components/PageScroll/PageScroll';
+import NotFound from './Pages/NotFound/NotFound';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/foods/:id" element={<SingleFood />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order-success" element={<OrderSuccess />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
