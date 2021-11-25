@@ -41,7 +41,8 @@ const Food = ({ food }) => {
 
                 <Typography variant="p" component="p" sx={{
                     marginBottom:'20px',
-                    color:'#555'
+                    color:'#555',
+                    fontFamily: "'Playball', cursive"
                 }}>
                     {food.description.substr(0 , 30)}...
                 </Typography>

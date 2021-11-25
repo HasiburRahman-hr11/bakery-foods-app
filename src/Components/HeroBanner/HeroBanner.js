@@ -10,10 +10,14 @@ const HeroBanner = () => {
             background: 'linear-gradient(rgba(0, 0, 0, 0.40),rgba(0, 0, 0, 0.40)),  url(https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
-            padding:'100px 0',
+            padding:{
+                md:'100px 0',
+                sm:'80px 0',
+                xs:'50px 0'
+            },
             minHeight:{
-                xs:'350px',
-                sm:'450px',
+                xs:'300px',
+                sm:'400px',
                 md:'550px',
                 lg:'650px'
             },

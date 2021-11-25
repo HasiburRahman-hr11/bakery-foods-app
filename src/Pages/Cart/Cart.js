@@ -13,6 +13,7 @@ import { getOldCart } from '../../utils/cartHandler';
 import CheckoutForm from '../../Components/CheckoutForm/CheckoutForm';
 import CartOverview from '../../Components/CartOverview/CartOverview';
 import calculateCartAmount from '../../utils/cartCalculation';
+import Footer from '../../Components/Footer/Footer';
 
 const Cart = () => {
 
@@ -25,6 +26,7 @@ const Cart = () => {
 
     const [formData, setFormData] = useState({
         name: '',
+        phone: '',
         address: '',
         city: '',
         flat: '',
@@ -86,25 +88,24 @@ const Cart = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (formData.name && formData.address && formData.city) {
-            const orderData = {
-                orderBy: formData.name,
-                address: {
-                    city: formData.city,
-                    address: formData.address,
-                    flat: formData.flat
-                },
-                orderNote: formData.deliveryNote,
-                orderAmount: total
-            }
-            localStorage.removeItem('bakery-cart');
-            const newCarts = getOldCart();
-            setCart(newCarts);
-            successNotify('Order received successfully');
-
-            navigate('/order-success');
-            console.log(orderData);
+        const orderData = {
+            orderBy: formData.name,
+            phone: formData.phone,
+            address: {
+                city: formData.city,
+                address: formData.address,
+                flat: formData.flat
+            },
+            orderNote: formData.deliveryNote,
+            orderAmount: total
         }
+        localStorage.removeItem('bakery-cart');
+        const newCarts = getOldCart();
+        setCart(newCarts);
+        successNotify('Order received successfully');
+
+        navigate('/order-success');
+        console.log(orderData);
     }
 
     return (
@@ -147,8 +148,9 @@ const Cart = () => {
                             minHeight: 'calc(100vh - 200px)'
                         }}>
                             <Typography variant="h2" component="h2" sx={{
-                                fontSize: '25px',
-                                color: '#666'
+                                fontSize: '30px',
+                                color: '#666',
+                                fontFamily: "'Playball', cursive"
                             }}>
                                 Your cart is empty!
                             </Typography>
@@ -156,6 +158,7 @@ const Cart = () => {
                     )}
                 </Container>
             </Box>
+            <Footer />
         </>
     );
 };

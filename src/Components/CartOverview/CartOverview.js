@@ -70,7 +70,8 @@ const CartOverview = (props) => {
                 paddingBottom: '10px',
                 marginBottom: '20px',
                 borderBottom: '2px solid #ddd',
-                color: '#444'
+                color: '#444',
+                fontFamily: "'Playball', cursive"
             }}>
                 Cart Overview
             </Typography>

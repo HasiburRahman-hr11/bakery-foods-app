@@ -8,9 +8,11 @@ const CheckoutForm = ({ formData, handleChange  }) => {
                 fontWeight: '500',
                 fontSize: '20px',
                 paddingBottom: '10px',
+                paddingTop: '20px',
                 marginBottom: '20px',
                 borderBottom: '2px solid #ddd',
-                color: '#444'
+                color: '#444',
+                fontFamily: "'Playball', cursive"
             }}>
                 Delivery Details
             </Box>
@@ -22,6 +24,16 @@ const CheckoutForm = ({ formData, handleChange  }) => {
                     placeholder="Name"
                     name="name"
                     value={formData.name}
+                    onChange={handleChange}
+                    required />
+            </Box>
+            <Box component="div" className="input-group">
+                <Box
+                    component="input"
+                    type="tel"
+                    placeholder="Phone Number"
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleChange}
                     required />
             </Box>

@@ -1,0 +1,64 @@
+.footer {
+    background-color: #1C231F;
+}
+
+.footer-top {
+    padding: 50px 0;
+}
+
+.widget-title {
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: 'Playball', cursive;
+}
+
+.footer-social h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Playball', cursive;
+}
+
+
+.widget-body p,
+.widget-body a {
+    color: #ccc;
+    display: block;
+    width: 100%;
+    line-height: 25px;
+    font-size: 15px;
+}
+
+.widget-body a {
+    padding: 3px 0;
+}
+.footer-social {
+    margin-top: 25px;
+}
+
+ul.social-list {
+    display: flex;
+    align-items: center;
+}
+
+ul.social-list li {
+    margin-right: 15px;
+}
+ul.social-list li a{
+    color: #fff;
+    transition: all 0.4s ease;
+}
+ul.social-list li a:hover{
+    color: var(--primary-color);
+}
+
+.fooetr-bottom{
+    padding: 0 30px;
+}
+.footer-bottom-content{
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #aaa;
+    color: #ccc;
+    font-size: 14px;
+}

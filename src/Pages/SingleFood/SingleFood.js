@@ -12,6 +12,7 @@ import Loading from '../../Components/Loading/Loading';
 import { CartContext } from '../../context/CartContext';
 import { getOldCart, setNewCartToLs } from '../../utils/cartHandler';
 import { successNotify } from '../../utils/toastify';
+import Footer from '../../Components/Footer/Footer';
 
 const SingleFood = () => {
     const { setCart } = useContext(CartContext);
@@ -85,7 +86,9 @@ const SingleFood = () => {
                                 <Typography variant="p" component="p" sx={{
                                     marginBottom: '30px',
                                     color: '#444',
-                                    maxWidth: '400px'
+                                    maxWidth: '400px',
+                                    fontFamily: "'Playball', cursive",
+                                    fontSize: '18px'
                                 }}>
                                     {food.description}
                                 </Typography>
@@ -162,6 +165,7 @@ const SingleFood = () => {
                     </Grid>
                 </Container>
             </Box>
+            <Footer />
         </>
     );
 };

@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
 import Navigation from '../../Components/Navigation/Navigation';
+import Footer from '../../Components/Footer/Footer';
 
 const OrderSuccess = () => {
     return (
@@ -34,7 +35,8 @@ const OrderSuccess = () => {
                             <Typography variant="h2" component="h2" sx={{
                                 fontSize: '25px',
                                 color: '#666',
-                                marginBottom:'20px'
+                                marginBottom:'20px',
+                                fontFamily: "'Playball', cursive"
                             }}>
                                 Thank you. Order placed Successfully.
                             </Typography>
@@ -43,6 +45,7 @@ const OrderSuccess = () => {
                     </Box>
                 </Container>
             </Box>
+            <Footer/>
         </>
     );
 };
