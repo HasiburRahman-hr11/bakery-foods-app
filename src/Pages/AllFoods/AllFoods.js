@@ -6,6 +6,7 @@ import Navigation from '../../Components/Navigation/Navigation';
 
 import { foods } from '../../fakeData';
 import Food from '../../Components/Food/Food';
+import Footer from '../../Components/Footer/Footer';
 
 const AllFoods = () => {
     return (
@@ -24,6 +25,7 @@ const AllFoods = () => {
                     </Grid>
                 </Container>
             </Box>
+            <Footer/>
         </>
     );
 };

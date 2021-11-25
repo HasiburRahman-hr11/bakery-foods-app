@@ -47,7 +47,6 @@ const Cart = () => {
         cloneProducts[index].quantity = value + 1;
         setCart(cloneProducts);
         localStorage.setItem('bakery-cart', JSON.stringify(cart));
-        successNotify('Cart Updated Successfully.')
     }
     const handleQtyDecrement = (prevQty, index) => {
         const value = prevQty;
@@ -58,7 +57,6 @@ const Cart = () => {
         }
         setCart(cloneProducts);
         localStorage.setItem('bakery-cart', JSON.stringify(cart));
-        successNotify('Cart Updated Successfully.')
     }
     const qtyChangeHandler = (event, index) => {
         const value = event.target.value;

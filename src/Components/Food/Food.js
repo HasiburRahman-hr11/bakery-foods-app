@@ -9,7 +9,18 @@ const Food = ({ food }) => {
             padding: '20px 15px',
             background: '#fff',
             boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px',
-            borderRadius: '5px'
+            borderRadius: '5px',
+            transition:'all 0.3s ease',
+            border:{
+                md:'1px solid #fff',
+                xs:'0'
+            },
+            '&:hover':{
+                border:{
+                    md:'1px dotted #999',
+                    xs:'0'
+                }
+            }
         }}>
             <Box component="div" sx={{
                 position: 'relative'

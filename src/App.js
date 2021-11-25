@@ -8,11 +8,13 @@ import Home from './Pages/Home/Home';
 import SingleFood from './Pages/SingleFood/SingleFood';
 import Cart from './Pages/Cart/Cart';
 import OrderSuccess from './Pages/OrderSuccess/OrderSuccess';
+import PageScroll from './Components/PageScroll/PageScroll';
 
 const App = () => {
   return (
     <BrowserRouter>
       <ToastContainer />
+      <PageScroll/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/foods" element={<AllFoods />} />

@@ -72,10 +72,10 @@ const Footer = () => {
                                             <Link to="#">Contact Us</Link>
                                         </li>
                                         <li>
-                                            <Link to="/signin">Login</Link>
+                                            <Link to="#">Login</Link>
                                         </li>
                                         <li>
-                                            <Link to="/my-orders">My Orders</Link>
+                                            <Link to="/cart">My Cart</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -95,7 +95,7 @@ const Footer = () => {
             </div>
             <div className="fooetr-bottom">
                 <div className="footer-bottom-content">
-                    <p>© 2021 HR Hasib, All Rights Reserved</p>
+                    <p>© 2021 Hasibur Rahman, All Rights Reserved</p>
                 </div>
             </div>
             <ToTop/>
