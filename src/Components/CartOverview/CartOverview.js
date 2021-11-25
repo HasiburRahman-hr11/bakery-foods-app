@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import useCartFoods from '../../hooks/useCartFoods';
-import { successNotify } from '../../utils/toastify';
+import { successNotify ,errorNotify } from '../../utils/toastify';
 import calculateCartAmount from '../../utils/cartCalculation';
 
 const CartOverview = (props) => {
@@ -40,12 +40,13 @@ const CartOverview = (props) => {
                 successNotify('Coupon applied successfully');
                 setCouponApplied(true);
                 setCoupon('')
-            }
-            if (coupon === 'less15') {
+            }else if (coupon === 'less15') {
                 setTotal(total - 15);
                 successNotify('Coupon applied successfully');
                 setCouponApplied(true);
                 setCoupon('')
+            }else{
+                errorNotify('Invalid Coupon')
             }
         }
     }

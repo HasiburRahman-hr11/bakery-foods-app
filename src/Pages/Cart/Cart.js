@@ -95,7 +95,7 @@ const Cart = () => {
                 flat: formData.flat
             },
             orderNote: formData.deliveryNote,
-            orderAmount: total
+            orderAmount: total.toFixed(2)
         }
         localStorage.removeItem('bakery-cart');
         const newCarts = getOldCart();

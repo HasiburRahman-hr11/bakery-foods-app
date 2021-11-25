@@ -1,7 +1,6 @@
 import React from 'react';
 import './NewsLetterSection.css';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
@@ -14,7 +13,7 @@ const NewsLetterSection = () => {
                 md: '400px'
             }
         }}>
-            <div class="triangle-decor">
+            <div className="triangle-decor">
                 <svg x="0px" y="0px" width="100%" height="15px">
                     <defs>
                         <pattern id="bottom-divider" x="0" y="0" width="15" height="15" patternUnits="userSpaceOnUse"><path fill-rule="evenodd" clip-rule="evenodd" fill="#fff" d="M7.504-0.008l7.504,7.504L7.504,15L0,7.496L7.504-0.008z"></path></pattern>
