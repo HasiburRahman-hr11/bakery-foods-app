@@ -2,6 +2,7 @@
 
 This is a simple foods selling website created with ReactJs. User can Add foods to cart and place their order by filling an order details form.
 
+Demo: [https://bakery-hr.netlify.app/](https://bakery-hr.netlify.app/)
 
 ### Built With
 
@@ -39,4 +40,3 @@ Get this app by following the steps given below.
 
 Hasibur Rahman - [Portfolio](https://hrfolio.netlify.app/) - mdhasiburrahman47@gmail.com
 
-Demo: [https://bakery-hr.netlify.app/](https://bakery-hr.netlify.app/)
