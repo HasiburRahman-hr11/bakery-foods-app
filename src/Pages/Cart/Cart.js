@@ -14,6 +14,7 @@ import CheckoutForm from '../../Components/CheckoutForm/CheckoutForm';
 import CartOverview from '../../Components/CartOverview/CartOverview';
 import calculateCartAmount from '../../utils/cartCalculation';
 import Footer from '../../Components/Footer/Footer';
+import Slide from 'react-reveal/Slide';
 
 const Cart = () => {
 
@@ -118,22 +119,26 @@ const Cart = () => {
                             <Grid container spacing={4}>
                                 <Grid item md={6} xs={12}>
 
-                                    <CartOverview
-                                        handleRemoveCart={handleRemoveCart}
-                                        handleQtyIncrement={handleQtyIncrement}
-                                        handleQtyDecrement={handleQtyDecrement}
-                                        qtyChangeHandler={qtyChangeHandler}
-                                        total={total}
-                                        setTotal={setTotal}
-                                    />
+                                    <Slide top>
+                                        <CartOverview
+                                            handleRemoveCart={handleRemoveCart}
+                                            handleQtyIncrement={handleQtyIncrement}
+                                            handleQtyDecrement={handleQtyDecrement}
+                                            qtyChangeHandler={qtyChangeHandler}
+                                            total={total}
+                                            setTotal={setTotal}
+                                        />
+                                    </Slide>
 
                                 </Grid>
                                 <Grid item md={6} xs={12} sx={{ paddingRight: { lg: '100px', md: '50px' } }}>
 
-                                    <CheckoutForm
-                                        formData={formData}
-                                        handleChange={handleChange}
-                                    />
+                                    <Slide bottom>
+                                        <CheckoutForm
+                                            formData={formData}
+                                            handleChange={handleChange}
+                                        />
+                                    </Slide>
 
                                 </Grid>
                             </Grid>
