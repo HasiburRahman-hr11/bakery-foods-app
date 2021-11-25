@@ -8,10 +8,10 @@ import Typography from '@mui/material/Typography';
 const NewsLetterSection = () => {
     return (
         <Box component="div" className="section newsletter-section" sx={{
-            minHeight:{
-                xs:'250px',
-                sm:'300px',
-                md:'400px'
+            minHeight: {
+                xs: '250px',
+                sm: '300px',
+                md: '400px'
             }
         }}>
             <div class="triangle-decor">
@@ -23,31 +23,37 @@ const NewsLetterSection = () => {
                 </svg>
             </div>
             <Container fixed>
-                <Grid container spacing={3}>
-                    <Grid item md={6} xs={12}>
-                        <Typography variant="h4" component="h4" sx={{
-                            color: 'var(--primary-color)',
-                            fontSize: {
-                                sm: '16px',
-                                xs: '12px'
-                            }
-                        }}>LATEST FOODS DIRECTLY TO YOUR INBOX</Typography>
-                        <Typography variant="h2" component="h2" sx={{
-                            color: '#fff',
-                            fontSize: {
-                                sm: '35px',
-                                xs: '20px'
-                            },
-                            fontFamily: "'Playball', cursive"
-                        }}>SUBSCRIBE FOR UPDATED</Typography>
-                    </Grid>
-                    <Grid item md={6} xs={12}>
-                        <div className="newsletter-box">
-                            <input type="email" name="email" placeholder="Email Address" />
-                            <button type="button">Submit</button>
-                        </div>
-                    </Grid>
-                </Grid>
+
+
+               <Box component="div" sx={{
+                   maxWidth:'500px',
+                   margin:'0 auto',
+                   textAlign:'center'
+               }}>
+               <Typography variant="h4" component="h4" sx={{
+                    color: 'var(--primary-color)',
+                    fontSize: {
+                        sm: '16px',
+                        xs: '12px'
+                    }
+                }}>For Latest Food News</Typography>
+                <Typography variant="h2" component="h2" sx={{
+                    color: '#fff',
+                    fontSize: {
+                        sm: '35px',
+                        xs: '20px'
+                    },
+                    fontFamily: "'Playball', cursive"
+                }}>Subscribe Our Newsletter</Typography>
+
+                <div className="newsletter-box">
+                    <input type="email" name="email" placeholder="Email Address" />
+                    <button type="button">Submit</button>
+                </div>
+               </Box>
+
+
+
             </Container>
         </Box>
     );
