@@ -4,11 +4,12 @@ This is a simple foods selling website created with ReactJs. User can Add foods 
 
 Demo: [https://bakery-hr.netlify.app/](https://bakery-hr.netlify.app/)
 
-### Built With
+### Technologies Used
 
 * [React.js](https://reactjs.org/)
 * [Material-UI](https://mui.com/)
 * [React Router Dom](https://reactrouter.com/)
+* [React Reveal](https://www.react-reveal.com/)
 
 
 <!-- GETTING STARTED -->
